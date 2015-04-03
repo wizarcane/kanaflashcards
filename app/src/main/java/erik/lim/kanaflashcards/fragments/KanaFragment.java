@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import erik.lim.kanaflashcards.R;
 import erik.lim.kanaflashcards.model.Kana;
@@ -39,6 +40,12 @@ public class KanaFragment extends Fragment {
 
         v.setText(syllable.syllable);
         v.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), syllable.romaji, Toast.LENGTH_SHORT).show();
+            }
+        });
         return v;
     }
 
